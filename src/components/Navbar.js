@@ -1,66 +1,87 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+          Aesop
+        </Link>
+        <button
+          className={`navbar-toggler ${isMenuOpen ? 'collapsed' : ''}`}
+          type="button"
+          onClick={toggleMenu}
+        >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup" style={{ position: "relative" }}>
-          <div className="navbar-nav">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/skin">Skin</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/body">Body</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/hair">Hair</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/fragnance">Fragnance</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/travel">Travel</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/gifts">Gifts</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/read">Read</Link>
-              </li>
-              
-            </ul>
-          </div>
-          <div className="d-flex align-items-center" style={{ right: "30px", position: "absolute" }}>
-            
-           
-            <div>
-              <li className="nav-item" style={{ listStyleType: "none" }}>
-                <Link className="nav-link" to="/login" style={{ margin: "10px" }}>
-                  Login
-                </Link>
-              </li>
-            </div>
-            <div>
-              <li className="nav-item" style={{ listStyleType: "none" }}>
-                <Link className="nav-link" to="/register" style={{ margin: "10px" }}>
-                  Register
-                </Link>
-              </li>
-            </div>
-          </div>
+        <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`}>
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/" onClick={closeMenu}>
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/skin" onClick={closeMenu}>
+                Skin
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/body" onClick={closeMenu}>
+                Body
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/hair" onClick={closeMenu}>
+                Hair
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/fragnance" onClick={closeMenu}>
+                Fragnance
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/travel" onClick={closeMenu}>
+                Travel
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/gifts" onClick={closeMenu}>
+                Gifts
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/read" onClick={closeMenu}>
+                Read
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/login" onClick={closeMenu}>
+                Login
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/register" onClick={closeMenu}>
+                Register
+              </Link>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </div>
-  )
-}
+      </div>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
