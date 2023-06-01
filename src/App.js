@@ -25,16 +25,16 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/internship"  element={<Home/>}></Route>
-        <Route path="/skin"  element={<Skin/>}></Route>
-        <Route path="/body"  element={<Body/>}></Route>
-        <Route path="/hair"  element={<Hair/>}></Route>
-        <Route path="/fragnance"  element={<Fragnance/>}></Route>
-        <Route path="/travel"  element={<Travel/>}></Route>
-        <Route path="/gifts"  element={<Gifts/>}></Route>
-        <Route path="/read"  element={<Read/>}></Route>
-        <Route path="/cart"  element={<Cart/>}></Route>
-        <Route path="/login"  element={<Login/>}></Route>
-        <Route path="/register"  element={<Register/>}></Route>
+        <Route path="/internship/skin"  element={<Skin/>}></Route>
+        <Route path="/internship/body"  element={<Body/>}></Route>
+        <Route path="/internship/hair"  element={<Hair/>}></Route>
+        <Route path="/internship/fragnance"  element={<Fragnance/>}></Route>
+        <Route path="/internship/travel"  element={<Travel/>}></Route>
+        <Route path="/internship/gifts"  element={<Gifts/>}></Route>
+        <Route path="/internship/read"  element={<Read/>}></Route>
+        <Route path="/internship/cart"  element={<Cart/>}></Route>
+        <Route path="/internship/login"  element={<Login/>}></Route>
+        <Route path="/internship/register"  element={<Register/>}></Route>
       </Routes>
     </Router>
     </>
